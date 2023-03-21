@@ -404,7 +404,7 @@ class DataSource {
      */
     findMetadata(target) {
         return this.entityMetadatas.find((metadata) => {
-            if (metadata.target === target)
+            if (metadata.target === target || metadata.target.name === target.name)
                 return true;
             if (InstanceChecker_1.InstanceChecker.isEntitySchema(target)) {
                 return metadata.name === target.options.name;
